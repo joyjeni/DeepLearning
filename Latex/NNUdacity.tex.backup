@@ -1,0 +1,94 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+\graphicspath{{../images/}}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Overview of Machine Learnnig}
+\begin{enumerate}
+ \item Logistic Classification
+ \item Stochastic Optimization
+ \item Data and Parameter Turning
+ \item Deep Networks
+ \item Regularization
+ \item Convolutional Networks
+ \item Embeddings
+ \item Recurrent Models
+ 
+\end{enumerate}
+
+
+\section{History of Neural Networks}
+\begin{enumerate}
+ \item Fukushimas Neocognitron - 1980's
+ \item Lecun's Net -1990
+ \item Krizhevsky's Alexnet
+ \item Speech Recognition -2009
+ \item Computer Vision -2012
+ \item Machine Translation - 2014
+ 
+\end{enumerate}
+
+\section{Classification}
+
+Given set of images and labels in training data. In test data completely new image comes. Classify image. After classification we can do 
+\begin{enumerate}
+ \item Regression
+ \item Ranking - In web page. Classify relevant or irrrelevant
+ \item Reinforcement Learning
+ \item Detection  - Eg : Detect presence or absence of pedestrian
+\end{enumerate}
+
+
+\subsection{Logistic Classifier}
+
+\begin{equation}\label{linear}
+ WX +b =Y
+\end{equation}
+  
+ X - Image Pixels \\
+ Y - Labels\\
+ W- Weight\\
+ b- Bias\\
+\subsubsection{Soft Max Function}
+
+Softmax function converts scores into probability
+\begin{equation}
+ S(y_i) = \frac{e^y_i}{\displaystyle \sum e^y_j}
+\end{equation}
+
+
+\subsubsection{One Hot Encoding}
+
+One for correct class and zero to other class labels.
+
+\subsubsection{Cross Entrophy}
+
+The way to measure distance between two probabilities is called cross entrophy.
+
+\begin{equation}
+ D(S,L) = -\displaystyle \sum_i L_i log(S_i) 
+\end{equation}
+
+Cross Entrophy is not symmetric. $D(S,L) \neq D(L,S) $\\
+
+\includegraphics[width=10cm, height=5cm]{nnend2end}
+\section{Training Loss}
+
+Loss = Average Cross entrophy. We do  to minimize distance between similar labels and maximize distance between dissimilar labels.
+\section{Gradient Descend}
+
+
+\end{document}
