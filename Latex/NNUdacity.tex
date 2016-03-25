@@ -107,8 +107,58 @@ While taking average to calculate training loss we are taking average of distanc
 But in real-time the weight is computed for all parameters.
 
 
-
-
-
 \includegraphics[width=10cm, height=5 cm]{gradientDescend}
+\subsection{Big Loss Function because of Numerical Unstability}
+
+To overcome Big Loss function keep mean zero and equal variance.
+\b Mean
+
+\begin{align*} 
+ X_i =0 
+ \end{align*}
+
+\b Variance
+
+\begin{align*}
+ \sigma(X_i) = \sigma(X_j)
+\end{align*}
+
+\includegraphics[width=5cm, height=5cm]{zeromean}
+
+\subsection{Normalize Input for Gradient Descend}
+
+To normalize pixel input normalize as follows.
+
+\begin{align*}
+\frac{R-128}{128} \qquad	\frac{G-128}{128}	\qquad \frac{B-128}{128}
+\end{align*}
+
+\subsection{Initialize Weight for Gradient Descend}
+
+Initialize $w_0, b_0$
+
+
+
+Large  value of $\sigma$ - Distribution has large peaks \\
+Small value of $\sigma$ - Distribution is very uncertain.
+
+Start with very small value of $\sigma$
+
+ \includegraphics[width=5cm,height=5cm]{initializelogicclassifier}
+ \subsection{Steps to Train Logistic Classifier}
+ \includegraphics[width=10cm, height=5cm]{trainlogicclassifier}
+ 
+ \begin{enumerate}
+  \item $X_i$ - Training data is normalized to zero mean and equal variance
+  \item w - Initialized with random weights
+  \item Do softmax
+  \item Do cross entrophy loss
+  \item calculate average for entire training data
+  \item Optimization - Compute derivative loss function w.r.to weight
+   \item Optimization - Compute derivative loss function w.r.to bias
+   \item derivative is in opposite direction (-)
+   \item Loop through derivative function till we reach minimum of loss function.
+ \end{enumerate}
+
+ \includegraphics[width=10cm, height=5cm]{lcoptimize}
 \end{document}
